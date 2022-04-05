@@ -1,0 +1,48 @@
+<div class="row">
+  <div class="col-xs-10">
+    <app-shopping-edit></app-shopping-edit>
+    <hr>
+    
+    <table id="table">
+
+      <tr class="tableHead">
+          <td>ID</td>
+          <td>Groupe de tâche</td>
+          <td>Nom</td>
+          <td>priorité</td>
+          <td>Date limite</td>
+          <td>Statut</td>
+          <td>Action</td>
+      </tr>
+
+      <tr class="taskDone" *ngFor="let task of tasks; let i = index">
+          <td>{{i}}</td>
+          <td>{{ task.name }}</td>
+          <td>{{ task.name }}</td>
+          <td>{{ task.amount }}</td>
+          <td>13/11/3212</td>
+          <td>Fait</td>
+          <td>
+              <div class="action">
+                  <input type="checkbox" id="checkbox" checked>
+                  <a><i id="pencil" class="fa fa-pencil"
+                    (click) ="onEditItem(i)"></i></a>
+                  <a><i id="trash" class="fa fa-trash" (click) ="onEditItem(i)"></i></a>
+              </div>
+          </td>
+      </tr>
+
+  </table>
+
+    <!-- <ul class="list-group">
+      <a
+        class="list-group-item"
+        style="cursor: pointer"
+        *ngFor="let task of tasks; let i = index"
+        (click) ="onEditItem(i)"
+      >
+        {{ task.name }} ({{ task.amount }})
+      </a>
+    </ul> -->
+  </div>
+</div>
