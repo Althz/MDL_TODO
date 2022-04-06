@@ -4,7 +4,7 @@
     "mongoose": "^6.2.8",
     "morgan": "^1.10.0"
   },
-  "name": "nasa-project",
+  "name": "todo-project",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
