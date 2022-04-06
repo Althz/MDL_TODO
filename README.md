@@ -6,7 +6,7 @@ Il s'agit d'un referentiel de l'application TODO qui fait fait partie des travau
 Etape 1: Cloner le dépôt
 
 ```
-git clone https://github.com/bienvenuembaiwodji/TODO.git
+git clone https://github.com/Althz/MDL_TODO.git
 ```
 
 
