@@ -68,7 +68,7 @@
                     *ngFor="let ingredientCtr of controls; let i = index"
                     [formGroupName]="i"
                     style="margin-top: 10px;">
-                        <div class="col-xs-3">
+                        <div class="col-xs-4">
                             <input 
                             type="text" 
                             class="form-control"
@@ -82,21 +82,19 @@
                             formControlName="amount">
                         </div>
 
-
-                        <div class="col-xs-3">
-                            <input 
+                        <div class="col-xs-2">
+                            <input
                             type="date" 
                             class="form-control"
-                            formControlName="date">
+                            formControlName="deadline">
                         </div>
 
                         <div class="col-xs-2">
-                            <input 
+                            <input
                             type="text" 
                             class="form-control"
-                            formControlName="taskGroup">
+                            formControlName="tasksGroup">
                         </div>
-
 
                         <div class="col-xs-2">
                             <button 

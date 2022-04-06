@@ -17,15 +17,15 @@ async function httpGetAllTasks(req, res) {
 async function httpAddNewTask(req, res) {
 
     const task = req.body;
-    if (!task.name || !task.doneDate
+    if (!task.name || !task.deadline
         || !task.tasksGroup) {
         return res.status(400).json({
             error: 'Missing required task property',
 
         });
     }
-    task.doneDate = new Date(task.doneDate);
-    if (isNaN(task.doneDate)) {
+    task.deadline = new Date(task.deadline);
+    if (isNaN(task.deadline)) {
         res.status(400).json({
             error: 'Invalid done task date',
         });

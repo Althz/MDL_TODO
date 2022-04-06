@@ -9,7 +9,7 @@ const task = {
     taskNumber: 100,
     name: 'Kepler Exploration X',
     description: 'No comment',
-    doneDate: new Date('December 27, 2030'),
+    deadline: new Date('December 27, 2030'),
     tasksGroup: 'Kepler-442 b',
     status: false,
 };

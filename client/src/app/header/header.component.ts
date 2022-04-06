@@ -12,11 +12,12 @@ export class HeaderComponent {
   }
   onSaveData(){
     this.dataStorageService.storeTasksGroups();
+    this.dataStorageService.storeTasks();
   }
 
   onFetchData(){
     this.dataStorageService.fetchTasksGroups();
-
-    this.dataStorageService.fetchTasks();
+    this.dataStorageService.fetchTasksList();
+    //this.dataStorageService.fetchTasks();
   }
 }

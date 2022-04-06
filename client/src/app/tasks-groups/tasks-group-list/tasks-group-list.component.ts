@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { DataStorageService } from 'src/app/shared/data-storage.service';
 
 import { TasksGroup } from '../tasks-group.model';
 import { TasksGroupService } from '../tasks-group.service';
@@ -11,14 +12,16 @@ import { TasksGroupService } from '../tasks-group.service';
   styleUrls: ['./tasks-group-list.component.css']
 })
 export class TasksGroupListComponent implements OnInit, OnDestroy {
-  recipes: TasksGroup[];
+  recipes: TasksGroup[]
   subscription: Subscription;
   constructor(private recipeService: TasksGroupService,
               private router: Router,
-              private route: ActivatedRoute) {
+              private route: ActivatedRoute,
+              private  dataStorageService: DataStorageService) {
   }
 
   ngOnInit() {
+
 
    this.subscription =  this.recipeService.tasksGroupsChanged
     .subscribe(

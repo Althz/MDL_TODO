@@ -1,16 +1,14 @@
 
+import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { Task } from '../shared/task.model';
 
-
+@Injectable()
 export class TasksListService {
   tasksChanged = new Subject<Task[]>();
   startedEditing = new Subject<number>();
 
-  private tasks: Task[] = [
-    new Task('Algo des graphes', 5),
-    new Task('Methode numérique', 10),
-  ];
+  private tasks: Task[] = [];
 
   getTasks() {
     return this.tasks.slice();
@@ -37,6 +35,12 @@ export class TasksListService {
 
   deleteTask(index: number){
     this.tasks.splice(index,1);
+    this.tasksChanged.next(this.tasks.slice());
+  }
+
+
+  setTasks(tasks: Task[]){
+    this.tasks = tasks;
     this.tasksChanged.next(this.tasks.slice());
   }
 }

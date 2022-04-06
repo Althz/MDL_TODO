@@ -76,7 +76,9 @@ export class TasksGroupEditComponent implements OnInit {
               'amount': new FormControl(ingredient.amount,[
                 Validators.required,
                 Validators.pattern(/^[1-9]+[0-9]*$/)
-              ])
+              ]),
+              'deadline': new FormControl(ingredient.deadline,Validators.required),
+              'tasksGroup': new FormControl(ingredient.tasksGroup,Validators.required)
 
             })
           )

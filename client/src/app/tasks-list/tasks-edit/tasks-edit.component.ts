@@ -36,7 +36,9 @@ export class ShoppingEditComponent implements OnInit,OnDestroy {
         this.editedItem = this.slService.getTask(index);
         this.slForm.setValue({
           name: this.editedItem.name,
-          amount: this.editedItem.amount
+          amount: this.editedItem.amount,
+          deadline: this.editedItem.deadline,
+          tasksGroup: this.editedItem.tasksGroup
         })
       }
     );
@@ -46,7 +48,7 @@ export class ShoppingEditComponent implements OnInit,OnDestroy {
 
   onSubmit(form: NgForm) {
     const value = form.value;
-    const newIngredient = new Task(value.name, value.amount);
+    const newIngredient = new Task(value.name, value.amount, value.deadline,value.tasksGroup);
     if(this.editMode){
       this.slService.updateTask(this.editedItemIndex, newIngredient);
     }else{
